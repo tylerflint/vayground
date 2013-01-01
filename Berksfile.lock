@@ -1,0 +1,1 @@
+cookbook 'vagrant-ssh-config', :git => 'git@github.com:tylerflint/chef-vagrant-ssh-config.git', :ref => 'a1d126ff3d5b055290f4ae1991b25bafb1d24d05'

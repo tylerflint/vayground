@@ -8,11 +8,12 @@ Vagrant::Config.run do |config|
   config.berkshelf.config_path = './knife.rb'
 
   images = {
-    precise: "http://files.vagrantup.com/precise64.box"
+    precise64: "http://files.vagrantup.com/precise64.box"
   }
 
   images.each do |key, url|
     config.vm.define key do |box|
+      box.vm.box = key.to_s
       box.vm.box_url = url
       box.vm.customize ["modifyvm", :id, "--cpus", 1, "--memory", 512]    
       box.vm.share_folder("v-root", "/vagrant", ".")
